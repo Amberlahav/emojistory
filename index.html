@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="public/styles/style.css">
+    <title>Emoji Story</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>#emojistory</h1>
+        <h2>Find out what your life story will be through emojis!</h2>
+        <h3>Please enter your first and last name:</h3>
+        <form>
+            <input type="text" placeholder="First Name" id="firstName">
+            <input type="text" placeholder="Last Name" id="lastName">
+            <input type="submit" value="Enter" class="enter">
+        </form>
+
+        <div class="keys">
+            <div data-key="65" class="key">
+                <span class="emoji">😄</span>
+            </div>
+            <div data-key="66" class="key">
+                <span class="emoji">😎</span>
+            </div>
+            <div data-key="67" class="key">
+                <span class="emoji">💪</span>
+            </div>
+            <div data-key="68" class="key">
+                <span class="emoji">🦄</span>
+            </div>
+            <div data-key="69" class="key">
+                <span class="emoji">👽</span>
+            </div>
+            <div data-key="70" class="key">
+                <span class="emoji">🍷</span>
+            </div>
+            <div data-key="71" class="key">
+                <span class="emoji">❄️</span>
+            </div>
+            <div data-key="72" class="key">
+                <span class="emoji">🌮</span>
+            </div>
+            <div data-key="73" class="key">
+                <span class="emoji">🏅</span>
+            </div>
+            <div data-key="74" class="key">
+                <span class="emoji">🎢</span>
+            </div>
+            <div data-key="75" class="key">
+                <span class="emoji">🎓</span>
+            </div>
+            <div data-key="76" class="key">
+                <span class="emoji">😲</span>
+            </div>
+            <div data-key="77" class="key">
+                <span class="emoji">👮‍</span>
+            </div>
+            <div data-key="78" class="key">
+                <span class="emoji">👑</span>
+            </div>
+            <div data-key="79" class="key">
+                <span class="emoji">🌏</span>
+            </div>
+            <div data-key="80" class="key">
+                <span class="emoji">🌊</span>
+            </div>
+            <div data-key="81" class="key">
+                <span class="emoji">🎰</span>
+            </div>
+            <div data-key="82" class="key">
+                <span class="emoji">🍩</span>
+            </div>
+            <div data-key="83" class="key">
+                <span class="emoji">🎧</span>
+            </div>
+            <div data-key="84" class="key">
+                <span class="emoji">✈️</span>
+            </div>
+            <div data-key="85" class="key">
+                <span class="emoji">⛴</span>
+            </div>
+            <div data-key="86" class="key">
+                <span class="emoji">🏘</span>
+            </div>
+            <div data-key="87" class="key">
+                <span class="emoji">💻</span>
+            </div>
+            <div data-key="88" class="key">
+                <span class="emoji">🛌</span>
+            </div>
+            <div data-key="89" class="key">
+                <span class="emoji">🤑</span>
+            </div>
+            <div data-key="90" class="key">
+                <span class="emoji">🤖</span>
+            </div>
+        </div>
+        <button class="tryAgain">Try Another Name</button>
+    </div>
+
+    <script>
+    
+        window.addEventListener('keydown', showEmoji);
+
+            function showEmoji(e) {
+
+                const emoji = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+
+                emoji.classList.add('showEmoji');
+                
+                console.log(emoji);
+            }
+        document.addEventListener('submit', function(e){
+            document.querySelector('.keys').classList.add('showKeys');
+            document.querySelector('.tryAgain').classList.add('showButton');
+            e.preventDefault();
+            console.log('submitted')
+        })
+        // document.addEventListener('submit', function(e){
+
+        // })
+        document.querySelector('.tryAgain').addEventListener('click', clearFields);
+
+        function clearFields() {
+            // console.log('clicked!');
+           location.reload();
+        }
+    </script>
+</body>
+</html>
